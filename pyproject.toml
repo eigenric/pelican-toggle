@@ -1,11 +1,14 @@
 [project]
 name = "pelican-toggle"
+authors = [
+  { name = "Ricardo Ruiz" }
+]
 version = "0.0.1"
 description = "Toggle text"
-authors = [Ricardo Ruiz]
 license = {text = "MIT"}
 readme = "README.md"
 keywords = ["pelican", "plugin"]
+
 classifiers = [
     "Development Status :: 1 - Planning",
     "Environment :: Console",
@@ -23,9 +26,9 @@ classifiers = [
     "Topic :: Internet :: WWW/HTTP",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-requires-python = "3.11.9"
+requires-python = ">=3.11.9"
 dependencies = [
-    "pelican4.8.0",
+    "pelican>=4.8.0",
 ]
 
 [project.urls]
@@ -41,10 +44,10 @@ markdown = ["markdown>=3.4"]
 [tool.pdm.dev-dependencies]
 lint = [
     "invoke>=2.2",
-    "ruff>=0.3.7,<0.4.0"
-]
-test = [
-    "markdown>=3.4",
+        "ruff>=0.3.7,<0.4.0"
+    ]
+    test = [
+        "markdown>=3.4",
     "pytest>=7.0",
     "pytest-cov>=4.0",
     "pytest-sugar>=1.0",
