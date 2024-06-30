@@ -1,23 +1,17 @@
+import re
 from pelican import signals
-import markdown
 
-def parse_toggle_content(generator, content):
-    """
-    Converts the {% toggle %} tag into a details/summary HTML tag and processes Markdown within.
-    """
-    content = content._content
-    toggle_start = "{% toggle %}"
-    toggle_end = "{% end_toggle %}"
-    if toggle_start in content and toggle_end in content:
-        start_index = content.find(toggle_start) + len(toggle_start)
-        end_index = content.find(toggle_end)
-        toggle_content = content[start_index:end_index]
-        # Reemplazar el contenido original con el procesado
-        details_tag = f"<details><summary>Demostración</summary>{toggle_content}</details>"
-        print(details_tag)
-        content = content.replace(f"{toggle_start}{toggle_content}{toggle_end}", details_tag)
+TOGGLE_REGEX = r'\{% toggle %\}(.*?)\{% end_toggle %\}'
 
-    return content
+def toggle_to_details(generator):
+    def replace_toggle(match):
+        inner_content = match.group(1).strip()
+        summary = '<summary>Demostración</summary>'
+        details = f'<details>{summary}{inner_content}</details>'
+        return details
+
+    for article in generator.articles:
+        article._content = re.sub(TOGGLE_REGEX, replace_toggle, article._content, flags=re.DOTALL)
 
 def register():
-    signals.article_generator_write_article.connect(parse_toggle_content)
+    signals.article_generator_finalized.connect(toggle_to_details)
