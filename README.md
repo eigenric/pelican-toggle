@@ -35,6 +35,8 @@ Sea $n \in S$ un elemento minimal entonces no existe elemento estrictamente meno
 
 And the output will be:
 
+![show](show.png)
+
 ![toggle](output.png)
 
 Contributing
