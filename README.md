@@ -20,7 +20,22 @@ As long as you have not explicitly added a `PLUGINS` setting to your Pelican set
 Usage
 -----
 
-<<Add plugin details here>>
+The `toggle` directive is used to create a disclosure widget. The directive has the following syntax:
+
+```markdown
+**Proposición** Si $S \subset X$ es un conjunto totalmente ordenado o toset y tiene un elemento maximal (resp. minimal) entonces coincide con el máximo (resp. mínimo).
+
+{% toggle %}
+
+Sea $m \in S$ un elemento maximal entonces no existe elemento estrictamente mayor que él. Como $S$ es toset todos los elementos son comparables y por tanto todos son menores que $m$. La unicidad se da por ser poset en particular.
+Sea $n \in S$ un elemento minimal entonces no existe elemento estrictamente menor que él. Como $S$ es toset todos los elementos son comparables y por tanto todos son mayores que $n$.
+
+{% end_toggle %}
+````
+
+And the output will be:
+
+![toggle](output.png)
 
 Contributing
 ------------
