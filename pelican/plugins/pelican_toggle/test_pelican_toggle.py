@@ -13,8 +13,10 @@ def test_toggle_to_details():
             self._content = content
 
     # Define the test input and expected output
-    test_input = '<p>{% toggle %}Toggle content{% end_toggle %}</p>'
-    expected_output = '<p><details><summary>Demostración</summary>Toggle content</details></p>'
+    test_input = "<p>{% toggle %}Toggle content{% end_toggle %}</p>"
+    expected_output = (
+        "<p><details><summary>Demostración</summary>Toggle content</details></p>"
+    )
 
     # Create a sample generator and article
     generator = MockGenerator([MockArticle(test_input)])
