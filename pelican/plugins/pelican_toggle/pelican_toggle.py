@@ -1,4 +1,5 @@
 import re
+
 from pelican import signals
 
 TOGGLE_REGEX = r'\{% toggle %\}(.*?)\{% end_toggle %\}'

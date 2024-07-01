@@ -1,6 +1,5 @@
-import re
-from pelican import signals
 from pelican_toggle.pelican_toggle import toggle_to_details
+
 
 def test_toggle_to_details():
     # Create a sample generator object
