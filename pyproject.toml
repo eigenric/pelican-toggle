@@ -4,7 +4,7 @@ authors = [
   { name = "Ricardo Ruiz" }
 ]
 version = "0.0.1"
-description = "Toggle text"
+description = "A Pelican plugin to add collapsible sections (details/summary elements) to your site"
 license = {text = "MIT"}
 readme = "README.md"
 keywords = ["pelican", "plugin"]
@@ -28,7 +28,7 @@ classifiers = [
 ]
 requires-python = ">=3.11.9"
 dependencies = [
-    "pelican>=4.8.0",
+    "pelican>=4.9.1",
 ]
 
 [project.urls]
@@ -51,6 +51,9 @@ lint = [
     "pytest>=7.0",
     "pytest-cov>=4.0",
     "pytest-sugar>=1.0",
+]
+dev = [
+    "pytest>=8.2.2",
 ]
 
 [tool.pdm.build]
